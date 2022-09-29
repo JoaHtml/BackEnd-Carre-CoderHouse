@@ -23,8 +23,16 @@ const productos = [
     }
 ]
 
-router.get('/', (req, res) => {
-    res.status(200).json(productos)
+router.get('/', (req, res, next) => {
+    try {
+        const data = {
+            productos,
+            isEmpty: !productos.length
+        }
+        res.render('index', data)
+    } catch (error) {
+        next(error)
+    }
 })
 
 router.post('/', (req, res) => {
