@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./public/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./public/index.js"></script>
+
+    <title>Ejercicio 6 - WebSockets</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <form>
+                <div class="grid">
+                    <label for="product_name">
+                        Nombre del Producto:
+                        <input type="text" id="product_name" name="title" placeholder="Producto" required>
+                    </label>
+                </div>
+                <div class="grid">
+                    <label for="product_price">
+                        Precio del Producto:
+                        <input type="text" id="product_price" name="price" placeholder="Precio en US$" required>
+                    </label>
+                </div>
+                <div class="grid">
+                    <label for="product_url">
+                        URL de la foto:
+                        <input type="text" id="product_url" name="thumbnail"
+                            placeholder="http://urldelproducto.com/producto.img" required>
+                    </label>
+                </div>
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+            <h1>Tabla de Productos agregados</h1>
+            <div id="productsList"></div>
+        </div>
+        <div>
+            <form>
+                <input type="email" id="email" name="email" placeholder="Email de Usuario" required>
+                <div class="grid">
+                    <label for="chatMessage">
+                        Mensaje:
+                        <input type="text" id="chatMessage" name="chatMessage" placeholder="Escribe un mensaje aquí..."
+                            required>
+                    </label>
+                </div>
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+            <h2>Chat en Vivo</h2>
+            <div id="messages"></div>
+        </div>
+    </div>
+</body>
+
+</html>
